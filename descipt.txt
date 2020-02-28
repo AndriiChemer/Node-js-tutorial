@@ -1,0 +1,7 @@
+server.js - Настройка сервера
+
+node server.js - start server
+^C - reset server 
+
+npm install --save-dev nodemon
+npm install --save-dev morgan
