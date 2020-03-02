@@ -7,3 +7,4 @@ npm install --save-dev nodemon
 npm install --save-dev morgan (sjow logs info)
 npm install --save body-parser
 npm install --save mongoose (mongo db)
+npm install --save multer (like body parser but for )
