@@ -7,11 +7,13 @@ const mongoose = require('mongoose');
 const produstRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders')
 
-mongoose.connect(
-    'mongodb+srv://node-shop:' + 
+var connectionUrl = 'mongodb+srv://node-shop:' + 
     process.env.MONGO_ATLAS_PW + 
-    '@node-rest-shop-ikat2.mongodb.net/test?retryWrites=true&w=majority', 
-    { useNewUrlParser: true }
+    '@node-rest-shop-ikat2.mongodb.net/test?retryWrites=true&w=majority';
+
+mongoose.connect(
+    connectionUrl, 
+    { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 app.use(morgan('dev'));
@@ -34,7 +36,7 @@ app.use((req, res, next) => {
 
 //Routes which should handle requests
 app.use('/products', produstRoutes);
-app.use('/order', orderRoutes);
+app.use('/orders', orderRoutes);
 
 //Handle all errorы
 app.use((req, res, next) => {
