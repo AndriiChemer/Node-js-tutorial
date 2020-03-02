@@ -1,7 +1,9 @@
 server.js - Настройка сервера
 
-node server.js - start server
+node server.js - start server (npm start)
 ^C - reset server 
 
 npm install --save-dev nodemon
-npm install --save-dev morgan
+npm install --save-dev morgan (sjow logs info)
+npm install --save body-parser
+npm install --save mongoose (mongo db)
