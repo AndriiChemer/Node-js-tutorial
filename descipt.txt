@@ -3,6 +3,8 @@ server.js - Настройка сервера
 node server.js - start server (npm start)
 ^C - reset server 
 
+getting value from nodemon.json (process.env.JWT_KEY)
+
 npm init (create project in our folder)
 npm install --save express (easer for rest api)
 npm install --save-dev nodemon
@@ -10,3 +12,8 @@ npm install --save-dev morgan (sjow logs info)
 npm install --save body-parser
 npm install --save mongoose (mongo db)
 npm install --save multer (like body parser but for )
+npm install bcrypt --save (encrypter for password)
+npm install jsonwebtoken --save (for auth token)
+
+//Node.js web Token 
+https://github.com/auth0/node-jsonwebtoken
