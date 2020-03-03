@@ -17,3 +17,6 @@ npm install jsonwebtoken --save (for auth token)
 
 //Node.js web Token 
 https://github.com/auth0/node-jsonwebtoken
+
+
+MVC - pattern
