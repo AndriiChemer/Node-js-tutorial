@@ -2,7 +2,11 @@ const request = require('request');
 
 exports.get_one_feed = (req, res, nexr) => {
 
-    request('https://catalog.feedbooks.com/catalog/index.atom', function(error, response, body) {
+    const url = req.body.url;
+    console.log(url);
+    console.log('ANDRII CHEMER');
+
+    request(url, function(error, response, body) {
         if(!error && response.statusCode == 200) {
             console.log('body = ' + body);
 
