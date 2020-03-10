@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const produstRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders')
 const userRoutes = require('./api/routes/user')
+const freebooksRoutes = require('./api/routes/freebooks')
 
 var connectionUrl = 'mongodb+srv://node-shop:' + 
     process.env.MONGO_ATLAS_PW + 
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 app.use('/products', produstRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
+app.use('/freebooks', freebooksRoutes);
 
 //Handle all errorы
 app.use((req, res, next) => {

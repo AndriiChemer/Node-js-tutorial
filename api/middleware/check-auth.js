@@ -15,6 +15,4 @@ module.exports = (req, res, next) => {
             status: 401
         });
     }
-    
-    
 };

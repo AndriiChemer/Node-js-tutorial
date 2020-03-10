@@ -14,9 +14,13 @@ npm install --save mongoose (mongo db)
 npm install --save multer (like body parser but for )
 npm install bcrypt --save (encrypter for password)
 npm install jsonwebtoken --save (for auth token)
+npm install --save requests
 
 //Node.js web Token 
 https://github.com/auth0/node-jsonwebtoken
+
+//Tutorial for creating role
+https://medium.com/@sanju.nitt/implementing-role-based-authorization-using-json-web-token-in-node-js-cdc3a96ecb5c
 
 
 MVC - pattern
