@@ -1,14 +1,15 @@
 const request = require('request');
+const http = require('http');
+const fs = require('fs');
 
-exports.get_one_feed = (req, res, nexr) => {
+exports.get_one_feed = (req, res, next) => {
 
     const url = req.body.url;
     console.log(url);
-    console.log('ANDRII CHEMER');
 
     request(url, function(error, response, body) {
         if(!error && response.statusCode == 200) {
-            console.log('body = ' + body);
+            // console.log('body = ' + body);
 
             return res.status(200).json({
                 statusCode: 200,
@@ -24,4 +25,37 @@ exports.get_one_feed = (req, res, nexr) => {
             });
         }
     })
+}
+
+
+exports.download = (req, res, next) => {
+    const url = req.body.url;
+
+    res.download(url, (err) => {
+
+        console.log('Error: ' + err);
+
+        res.status(500).json({
+            statusCode: 500, 
+            message: "File did not download!",
+            error: err
+        });
+    }); 
+
+    console.log('Your file from ' + url + ' has been downloaded!')
+
+    //TODO remove file
+};
+
+exports.downloadFile = (req, res, next) => {
+    const url = req.body.url;
+
+    request(url).pipe(res);  
+}
+
+
+async function downloadPDF(pdfURL, outputFilename) {
+    let pdfBuffer = await request.get({uri: pdfURL, encoding: null});
+    console.log("Writing downloaded PDF file to " + outputFilename + "...");
+    fs.writeFileSync("./uploads/temp" + outputFilename, pdfBuffer);
 }
