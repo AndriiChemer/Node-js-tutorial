@@ -17,6 +17,12 @@ npm install jsonwebtoken --save (for auth token)
 npm install --save requests
 npm install --save fs
 
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+
 //Node.js web Token 
 https://github.com/auth0/node-jsonwebtoken
 
