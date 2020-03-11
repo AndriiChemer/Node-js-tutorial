@@ -32,3 +32,7 @@ exports.downloadFile = (req, res, next) => {
 
     request(url).pipe(res);  
 }
+
+exports.test = (req, res, next) => {
+    res.send("Welcome to NodeJS App on Heroku!");
+}

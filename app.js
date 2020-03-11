@@ -42,9 +42,7 @@ app.use('/products', produstRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/freebooks', freebooksRoutes);
-app.use('/test', (req, res) => {
-    res.send("Welcome to NodeJS App on Heroku!");
-});
+
 
 //Handle all errorы
 app.use((req, res, next) => {
