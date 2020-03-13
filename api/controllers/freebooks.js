@@ -27,35 +27,17 @@ exports.get_one_feed = (req, res, next) => {
     })
 }
 
-
-exports.download = (req, res, next) => {
-    const url = req.body.url;
-
-    res.download(url, (err) => {
-
-        console.log('Error: ' + err);
-
-        res.status(500).json({
-            statusCode: 500, 
-            message: "File did not download!",
-            error: err
-        });
-    }); 
-
-    console.log('Your file from ' + url + ' has been downloaded!')
-
-    //TODO remove file
-};
-
 exports.downloadFile = (req, res, next) => {
     const url = req.body.url;
 
     request(url).pipe(res);  
 }
 
+exports.test = (req, res, next) => {
+    console.log("Work");
 
-async function downloadPDF(pdfURL, outputFilename) {
-    let pdfBuffer = await request.get({uri: pdfURL, encoding: null});
-    console.log("Writing downloaded PDF file to " + outputFilename + "...");
-    fs.writeFileSync("./uploads/temp" + outputFilename, pdfBuffer);
+    res.status(200).json({
+        statusCode: 200,
+        message: "Work."
+    });
 }

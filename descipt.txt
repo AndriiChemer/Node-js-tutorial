@@ -14,7 +14,7 @@ npm install --save mongoose (mongo db)
 npm install --save multer (like body parser but for )
 npm install bcrypt --save (encrypter for password)
 npm install jsonwebtoken --save (for auth token)
-npm install --save requests
+npm install --save request
 npm install --save fs
 
 //Node.js web Token 
