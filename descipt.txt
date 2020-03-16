@@ -3,8 +3,6 @@ server.js - Настройка сервера
 node server.js - start server (npm start)
 ^C - reset server 
 
-getting value from nodemon.json (process.env.JWT_KEY)
-
 npm init (create project in our folder)
 npm install --save express (easer for rest api)
 npm install --save-dev nodemon
@@ -17,12 +15,6 @@ npm install jsonwebtoken --save (for auth token)
 npm install --save request
 npm install --save fs
 
-
-"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-
 //Node.js web Token 
 https://github.com/auth0/node-jsonwebtoken
 
@@ -30,9 +22,22 @@ https://github.com/auth0/node-jsonwebtoken
 https://medium.com/@sanju.nitt/implementing-role-based-authorization-using-json-web-token-in-node-js-cdc3a96ecb5c
 
 
-MVC - pattern
+//Deploy to heroku 
+https://www.heroku.com/nodejs   - tutorial
+heroku logs --tail   - show heroku logs
 
+1. add to package.json
+"engines": {
+    "node": "13.1.0"
+  }
 
-heroku logs --tail
+2. Add start command to package.json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js" (if we have nodemon)
+  },
 
-npm rebuild bcrypt --build-from-source
+3. Add Procfile and add command "web: node server.js" into this file
+
+4. if we have devDependencies then move to dependencies
