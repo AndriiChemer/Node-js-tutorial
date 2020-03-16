@@ -31,3 +31,8 @@ https://medium.com/@sanju.nitt/implementing-role-based-authorization-using-json-
 
 
 MVC - pattern
+
+
+heroku logs --tail
+
+npm rebuild bcrypt --build-from-source
