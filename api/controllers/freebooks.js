@@ -35,4 +35,10 @@ exports.downloadFile = (req, res, next) => {
 
 exports.test = (req, res, next) => {
     res.send("Welcome to NodeJS App on Heroku!");
+    console.log("Work");
+
+    res.status(200).json({
+        statusCode: 200,
+        message: "Work."
+    });
 }
